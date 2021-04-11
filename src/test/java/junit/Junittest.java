@@ -19,5 +19,13 @@ public class Junittest {
         Assertions.assertTrue(lname);
         System.out.println(lname);
     }
+    //for email
+    @Test
+    public void validateemail() {
+        Junittesting junittesting = new Junittesting();
+        Boolean emailcheck = junittesting.validateemail("mrunalnagalwade187@gmail.com");
+        Assertions.assertTrue(emailcheck);
+        System.out.println(emailcheck);
+    }
 
 }

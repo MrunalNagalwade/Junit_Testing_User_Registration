@@ -21,5 +21,11 @@ public class Junittesting
         boolean lname = matcher.find();
         return lname;
     }
-
+    public boolean validateemail(String email)
+    {
+        Pattern pattern = Pattern.compile("^[a-zA-Z0-9]([-._+]{0,1}[a-zA-Z0-9])*[@]{1}[a-zA-Z0-9]{1,}[.]{1}[a-zA-Z]{2,3}([.]{1}[a-zA-Z]{2,3}){0,1}$");
+        Matcher matcher = pattern.matcher(email);
+        boolean emailcheck = matcher.find();
+        return emailcheck;
+    }
 }
