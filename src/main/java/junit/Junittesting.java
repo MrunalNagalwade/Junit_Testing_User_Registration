@@ -35,4 +35,12 @@ public class Junittesting
         boolean mobilecheck = matcher.find();
         return mobilecheck;
     }
+    //For password
+    public boolean validate_Password(String password)
+    {
+        Pattern pattern = Pattern.compile("^[A-Za-z0-9]{8,}$");
+        Matcher matcher = pattern.matcher(password);
+        boolean passwordcheck = matcher.find();
+        return passwordcheck;
+    }
 }

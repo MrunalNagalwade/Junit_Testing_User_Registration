@@ -34,5 +34,13 @@ public class Junittest {
         Assertions.assertTrue(mobilecheck);
         System.out.println(mobilecheck);
     }
+    //FOR PASSWORDCHECK
+    @Test
+    public void validate_Password() {
+        Junittesting junittesting = new Junittesting();
+        Boolean passwordcheck = junittesting.validate_Password("Mrunal123");
+        Assertions.assertTrue(passwordcheck);
+        System.out.println(true);
+    }
 
 }
