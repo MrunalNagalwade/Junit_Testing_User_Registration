@@ -11,6 +11,13 @@ public class Junittest {
         Assertions.assertTrue(fname);
         System.out.println(fname);
     }
-
+    //FOR LASTNAME
+    @Test
+    public void lastName() {
+        Junittesting junittesting = new Junittesting();
+        Boolean lname = junittesting.validatelastName("Nagalwade");
+        Assertions.assertTrue(lname);
+        System.out.println(lname);
+    }
 
 }

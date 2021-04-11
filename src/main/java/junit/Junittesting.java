@@ -13,6 +13,13 @@ public class Junittesting
         System.out.println(fname);
         return fname;
     }
-
+    //FOR LASTNAME
+    public boolean validatelastName(String lastName)
+    {
+        Pattern pattern = Pattern.compile("[A-Z]{1}[a-z]");
+        Matcher matcher = pattern.matcher(lastName);
+        boolean lname = matcher.find();
+        return lname;
+    }
 
 }
