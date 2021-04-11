@@ -66,5 +66,13 @@ public class Junittest {
         Assertions.assertTrue(passwordcheck_Special_Character);
         System.out.println(true);
     }
+    //FOR Message
+    @Test
+    public void happy_message() {
+        Junittesting junittesting = new Junittesting();
+        Boolean message_check = junittesting.check_message("HAPPY");
+        Assertions.assertTrue(message_check);
+
+    }
 
 }

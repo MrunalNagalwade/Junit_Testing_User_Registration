@@ -67,4 +67,12 @@ public class Junittesting
         boolean passwordcheck_Special_Character = matcher.find();
         return passwordcheck_Special_Character;
     }
+    // FOR HAPPY MESSAGE
+    public boolean check_message(String message) {
+        if (message.contains("SAD"))
+            System.out.println("SAD");
+        else
+            System.out.println("HAPPY");
+        return true;
+    }
 }
