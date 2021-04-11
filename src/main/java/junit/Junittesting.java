@@ -28,4 +28,11 @@ public class Junittesting
         boolean emailcheck = matcher.find();
         return emailcheck;
     }
+    public boolean validamobile(String mobile_number)
+    {
+        Pattern pattern = Pattern.compile("^[0-9]{2}[ ][7,8,9]{1,1}[0-9]{9}$");
+        Matcher matcher = pattern.matcher(mobile_number);
+        boolean mobilecheck = matcher.find();
+        return mobilecheck;
+    }
 }

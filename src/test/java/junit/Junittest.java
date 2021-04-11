@@ -27,5 +27,12 @@ public class Junittest {
         Assertions.assertTrue(emailcheck);
         System.out.println(emailcheck);
     }
+    @Test
+    public void validatemobile() {
+        Junittesting junittesting = new Junittesting();
+        Boolean mobilecheck = junittesting.validamobile("91 9804215182");
+        Assertions.assertTrue(mobilecheck);
+        System.out.println(mobilecheck);
+    }
 
 }
