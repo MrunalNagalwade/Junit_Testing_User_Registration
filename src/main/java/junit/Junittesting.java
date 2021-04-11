@@ -59,4 +59,12 @@ public class Junittesting
         boolean passwordcheck_Numeric= matcher.find();
         return passwordcheck_Numeric;
     }
+    //For SPECIAL CHARACTER
+    public boolean validate_Special_Character(String password3)
+    {
+        Pattern pattern = Pattern.compile("^(.*[A-Z]{1,}.*[0-9]{1,}.*[~!@#$%^&*]?[A-Za-z0-9]{5,})$");
+        Matcher matcher = pattern.matcher(password3);
+        boolean passwordcheck_Special_Character = matcher.find();
+        return passwordcheck_Special_Character;
+    }
 }

@@ -58,5 +58,13 @@ public class Junittest {
         Assertions.assertTrue(passwordcheck_Numeric);
         System.out.println(true);
     }
+    //FOR SPECIAL CHARACTER
+    @Test
+    public void validate_Special_Character() {
+        Junittesting junittesting = new Junittesting();
+        Boolean passwordcheck_Special_Character = junittesting.validate_Special_Character("M1@#nal123");
+        Assertions.assertTrue(passwordcheck_Special_Character);
+        System.out.println(true);
+    }
 
 }
