@@ -51,4 +51,12 @@ public class Junittesting
         boolean passwordcheck_Uppercase = matcher.find();
         return passwordcheck_Uppercase;
     }
+    //For NUMERIC FIND
+    public boolean validate_Numeric(String password2)
+    {
+        Pattern pattern = Pattern.compile("^(.*[A-Z]{1}[A-Za-z0-9]{8,})$");
+        Matcher matcher = pattern.matcher(password2);
+        boolean passwordcheck_Numeric= matcher.find();
+        return passwordcheck_Numeric;
+    }
 }

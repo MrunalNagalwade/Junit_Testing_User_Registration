@@ -50,5 +50,13 @@ public class Junittest {
         Assertions.assertTrue(passwordcheck_Uppercase);
         System.out.println(true);
     }
+    //FOR NUMERIC
+    @Test
+    public void validate_Numeric() {
+        Junittesting junittesting = new Junittesting();
+        Boolean passwordcheck_Numeric = junittesting.validate_Numeric("Mrunal123");
+        Assertions.assertTrue(passwordcheck_Numeric);
+        System.out.println(true);
+    }
 
 }
