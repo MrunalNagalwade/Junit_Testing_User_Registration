@@ -42,5 +42,13 @@ public class Junittest {
         Assertions.assertTrue(passwordcheck);
         System.out.println(true);
     }
+    //FOR UPPERCASE
+    @Test
+    public void validate_Uppercase() {
+        Junittesting junittesting = new Junittesting();
+        Boolean passwordcheck_Uppercase = junittesting.validate_Uppercase("Mrunal123");
+        Assertions.assertTrue(passwordcheck_Uppercase);
+        System.out.println(true);
+    }
 
 }
