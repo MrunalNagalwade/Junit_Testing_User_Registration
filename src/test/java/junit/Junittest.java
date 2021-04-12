@@ -1,78 +1,60 @@
-
 package junit;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized.Parameters;
 
+import java.util.Arrays;
+import java.util.Collection;
+import org.junit.runners.Parameterized;
+
+@RunWith(Parameterized.class)
 public class Junittest {
-    @Test
-    void firstname() {
-        Junittesting junittesting = new Junittesting();
-        boolean fname = junittesting.validatefirstname("Mrunal");
-        Assertions.assertTrue(fname);
-        System.out.println(fname);
-    }
-    //FOR LASTNAME
-    @Test
-    public void lastName() {
-        Junittesting junittesting = new Junittesting();
-        Boolean lname = junittesting.validatelastName("Nagalwade");
-        Assertions.assertTrue(lname);
-        System.out.println(lname);
-    }
-    //for email
-    @Test
-    public void validateemail() {
-        Junittesting junittesting = new Junittesting();
-        Boolean emailcheck = junittesting.validateemail("mrunalnagalwade187@gmail.com");
-        Assertions.assertTrue(emailcheck);
-        System.out.println(emailcheck);
-    }
-    @Test
-    public void validatemobile() {
-        Junittesting junittesting = new Junittesting();
-        Boolean mobilecheck = junittesting.validamobile("91 9804215182");
-        Assertions.assertTrue(mobilecheck);
-        System.out.println(mobilecheck);
-    }
-    //FOR PASSWORDCHECK
-    @Test
-    public void validate_Password() {
-        Junittesting junittesting = new Junittesting();
-        Boolean passwordcheck = junittesting.validate_Password("Mrunal123");
-        Assertions.assertTrue(passwordcheck);
-        System.out.println(true);
-    }
-    //FOR UPPERCASE
-    @Test
-    public void validate_Uppercase() {
-        Junittesting junittesting = new Junittesting();
-        Boolean passwordcheck_Uppercase = junittesting.validate_Uppercase("Mrunal123");
-        Assertions.assertTrue(passwordcheck_Uppercase);
-        System.out.println(true);
-    }
-    //FOR NUMERIC
-    @Test
-    public void validate_Numeric() {
-        Junittesting junittesting = new Junittesting();
-        Boolean passwordcheck_Numeric = junittesting.validate_Numeric("Mrunal123");
-        Assertions.assertTrue(passwordcheck_Numeric);
-        System.out.println(true);
-    }
-    //FOR SPECIAL CHARACTER
-    @Test
-    public void validate_Special_Character() {
-        Junittesting junittesting = new Junittesting();
-        Boolean passwordcheck_Special_Character = junittesting.validate_Special_Character("M1@#nal123");
-        Assertions.assertTrue(passwordcheck_Special_Character);
-        System.out.println(true);
-    }
-    //FOR Message
-    @Test
-    public void happy_message() {
-        Junittesting junittesting = new Junittesting();
-        Boolean message_check = junittesting.check_message("HAPPY");
-        Assertions.assertTrue(message_check);
 
+    public Junittesting junittesting = new Junittesting();
+     String email;
+     boolean finalResult;
+
+
+    public Junittest(String email, boolean finalResult) {
+        this.email = email;
+        this.finalResult = finalResult;
     }
+    @Parameters
+        public static Collection emailData(){
+            return  Arrays.asList ( new Object[][]{
+                    { "mrunal@yahoo.com" ,true},
+                    {"mrunal-100@yahoo.com",true},
+                   {"mrunal.100@yahoo.com",true},
+                    {"mrunal111@abc.com",true},
+                    {"abc-100@abc.net",true},
+                    {"abc.100@abc.com.au",true},
+                    {"abc@1.com",true},
+                    {"abc@gmail.com.com",true},
+                    {"abc.100@1.com",true},
+                    {"abc.abc@gmail.co.in",true},
+                    {"abc100@gmail.com",true},
+                    {"abc.100@abc.com.au",true},
+                    {"abc@.com.my",false},
+                    {"abc123@gmail.a",false},
+                    {"abc",false},
+                    {".abc@abc.com",false},
+                    {"abc()*@gmail.com",false},
+                    {"abc@%.com",false},
+                    {"abc..2002@gmail.com",false},
+                    {"abc.@g.com",false},
+                    {"abc@abc@gmail.com",false},
+                    {"abc@a.com.21a",false},
+                    {"abc@g.cim.au.au",false},
+                    {"abc@g.cim.au.au",false}
+
+            });
+        }
+        @Test
+        public void givenEmail_WhenValidOrInvalid_ReturnTrueOrFalse() {
+            boolean result = junittesting.validateemail(this.email);
+            Assertions.assertEquals(this.finalResult,result);
+        }
 
 }
