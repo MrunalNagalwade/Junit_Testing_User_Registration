@@ -1,2 +1,5 @@
+junit/UserValidation_Exeption.java
+ junit.UserValidation_Exeption
+ junit.UserValidation_Exeption$ExceptionType
 junit/Junittesting.java
  junit.Junittesting
