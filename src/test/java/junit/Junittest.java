@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test;
 public class Junittest {
     Junittesting junittesting = new Junittesting();
     @Test
-    void givenfirstname_WhenStarts_Capitalletter_ReturnTrue()
+    void givenfirstname_WhenStarts_Upper_ReturnTrue()
     {
         try {
-            boolean fname = junittesting.validatefirstname(null);
+            boolean fname = junittesting.validatefirstname("Mrunal");
             Assertions.assertTrue(fname);
         }
         catch(UserValidation_Exeption e)
@@ -36,7 +36,7 @@ public class Junittest {
     void givenlastname_WhenStarts_Capitalletter_ReturnTrue()
     {
         try {
-            boolean lname = junittesting.validatelastName("Nagalwade");
+            boolean lname = junittesting.validatelastName("nagalwade");
             Assertions.assertTrue(lname);
         }
         catch(UserValidation_Exeption e)
@@ -131,7 +131,7 @@ public class Junittest {
     void given_Password_Validaiton_Fails_ReturnFalse()
     {
         try {
-            boolean passwordcheck = junittesting.validate_Password("mrunal");
+            boolean passwordcheck = junittesting.validate_Password("Mrunal");
             Assertions.assertFalse(passwordcheck);
         }
         catch(UserValidation_Exeption e)
